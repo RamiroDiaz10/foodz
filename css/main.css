@@ -9,6 +9,10 @@ body {
   flex-direction: column;
 }
 
+h1 span {
+    color: #04B90B;
+}
+
 /** Header */
 .header {
   border: 1px dotted red;
@@ -37,12 +41,24 @@ body {
 .nav-navbar {
   align-items: center;
   display: flex;
+  height: 44px;
   justify-content: space-between;
 }
 
 .menu__link {
-    color: #777E90;
-    text-decoration: none;
+  color: #777e90;
+  text-decoration: none;
+}
+
+.btn{
+  padding: .5rem;
+  border-radius: .2rem;
+}
+
+.btn--light-green {
+  background-color: #04B90B;
+  color: #ffff;
+  text-transform: uppercase;
 }
 
 /** Main */
@@ -59,7 +75,7 @@ main {
   }
   .menu-main {
     display: flex;
-    gap: 1rem; /** em / rem */
+    gap: .5rem; /** em / rem */
     list-style: none;
     margin: 0;
     padding: 0;
