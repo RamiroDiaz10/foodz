@@ -1,9 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+
 /** variables globales*/
 :root {
+  /** Convierte 1rem en base 10*/
+  --over-font-size: 62.5%;
+
   /** colores base */
-  --Islamic-Green: #04B90B;
-  --State-gray: #777e90;
-   
+  --charleston-green: #232b2b;
+  --islamic-green: #04b90b;
+  
+  /*--slate-grey: #777e90;
+  --cadet-blue: #b1b5c3;
+  --bright-gray: #e6e8ec;
+  --cultured: #f5f6fa;
+  --lotion: #fcfcfd;
+
+  
+  --aero-blue: #d3f9d5;
+  --light-coral: #ea8484;
+  --lavender-blush: #fcf1f1;
+
+  --green-blue: #106aab;
+  --alice-blue: #f1f7fc;
+  --dark-pink: #f25178;
+  --misty-rose: #fce5e9;
+  --blue-violet: #8d31e9;
+  --magnolia: #f6eefd;
+  --gamboge: #da9f0a;
+  --cornsilk: #fcf6d8;
+  --light-sea-green: #26aca0;
+  --azure: #edfcfb;
+   */
+
+}
+
+html {
+  font-size: var(--over-font-size);
 }
 
 html,
@@ -15,11 +47,21 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  font-size: 1.6rem;
+  font-family: "Alice", serif;
 }
 
 h1 span {
-    color: #04B90B;
+  color: var(--islamic-green);
 }
+
+h1,
+h2 {
+  color: var(--charleston-green);
+  font-size: 3.2rem;
+}
+
+
 
 /** Header */
 .header {
@@ -31,7 +73,7 @@ h1 span {
   box-sizing: border-box; /** Hace que los bordes queden internos al elemento */
   margin: 0 auto; /** Centra el elemento */
   max-width: 96vw; /** Ancho maximo */
-  padding: 0 8px; /** Distancia entre el contenido y el borde */
+  padding: 0 0.8rem; /** Distancia entre el contenido y el borde */
 }
 
 .container-fluid {
@@ -49,7 +91,7 @@ h1 span {
 .nav-navbar {
   align-items: center;
   display: flex;
-  height: 44px;
+  height: 4.4rem;
   justify-content: space-between;
 }
 
@@ -58,13 +100,17 @@ h1 span {
   text-decoration: none;
 }
 
-.btn{
-  padding: .5rem;
+.active {
+  color: var(--islamic-green);
+}
+
+.btn {
+  padding: .5rem 1rem;
   border-radius: .2rem;
 }
 
 .btn--light-green {
-  background-color: #04B90B;
+  background-color: var(--islamic-green);
   color: #ffff;
   text-transform: uppercase;
 }
@@ -73,17 +119,54 @@ h1 span {
 main {
   flex-grow: 1;
 }
+
+
 /** Footer */
 
+.widget {
+  margin: 4rem 0;
+    
+}
+
+.widget-left{
+  text-align: center;
+}
+
+
+details {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+
+}
+
+summary {
+  font-weight: bold;
+  margin:  -o.5em -0.5em 0;
+  padding: 0.5em;
+
+}
+
+details[open]{
+  padding:  0.5em;
+
+}
+
+details[open] summary{
+  border-bottom: 1px solid #aaaaaa;
+  margin-bottom: 0.5em;
+}
+
+
 /** Media Queries (breack point)*/
-@media (min-width: 568px) {
+@media (width > 568px) {
   .container {
     max-width: 54rem;
     padding: 0 1.6rem; /** Maneja la distancia entre contenido y el borde del contenedor e incrementa en 8px en cada media query */
   }
   .menu-main {
     display: flex;
-    gap: .5rem; /** em / rem */
+    gap: 0.5rem; /** em / rem */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -93,42 +176,60 @@ main {
   }
 }
 
-@media (min-width: 768px) {
+@media (width > 768px) {
   .container {
     max-width: 72rem;
     padding: 0 2.4rem;
   }
+
+  .footer-container {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .widget-left {
+    flex-basis: 40%;
+  }
+
+  .widget-right {
+    /* flex-basis: auto; */
+    /* flex-grow: 1; */
+    flex: 1 0 auto;
+    /* flex: <flex-grow> <flex-shrink> <flex-basics> ayuda a abreviar todos los flex en una sola linea */
+  }
+
+  
 }
 
-@media (min-width: 1024px) {
+@media (width > 1024px) {
   .container {
     max-width: 99.2rem;
     padding: 0 3.2rem;
   }
 }
 
-@media (min-width: 1200px) {
+@media (width > 1200px) {
   .container {
     max-width: 114rem;
     padding: 0 4rem;
   }
 }
 
-@media (min-width: 1400px) {
+@media (width > 1400px) {
   .container {
     max-width: 132rem;
     padding: 0 4.8rem;
   }
 }
 
-@media (min-width: 1600px) {
+@media (width > 1600px) {
   .container {
     max-width: 144rem;
     padding: 0 5.6rem;
   }
 }
 
-@media (min-width: 1920px) {
+@media (width > 1920px) {
   .container {
     max-width: 160rem;
     padding: 0 6.4rem;
